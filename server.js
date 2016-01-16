@@ -5,8 +5,10 @@ var express = require("express"),
     path = require("path"),
     methodOverride = require("method-override");
 
-app.use(express.static("/app"));
-app.use(express.static("/node_modules"));
+mongoose.connect('mongodb://localhost:27017/posts');
+
+app.use("/app", express.static(path.join(__dirname + "/app")));
+app.use("/node_modules", express.static(path.join(__dirname + "/node_modules")));
 
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname + "/index.html"));
