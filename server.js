@@ -5,9 +5,6 @@ var express = require("express"),
     path = require("path"),
     methodOverride = require("method-override");
 
-app.use(express.static("/app"));
-app.use(express.static("/node_modules"));
-
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname + "/index.html"));
 });
