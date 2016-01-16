@@ -2,24 +2,31 @@ angular.module('blogApp', ['ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider){
     
-    $urlRouterProvider.otherwise('error');
-    
     $stateProvider
     .state('home', {
         url: '/',
-        templateUrl: '../views/home.html',
+        templateUrl: '/app/views/home.html',
         controller: 'MainCtrl'
     })
     .state('blog', {
         url: '/blog',
-        templateUrl: '../views/blog.html',
-        controller: 'MainCtrl'
+        templateUrl: '/app/views/blog.html'
+    })
+    .state('create_post', {
+        url: '/create_post',
+        templateUrl: '/app/views/create_post.html'
     })
     .state('error', {
-        templateUrl: '../views/404.html'
-    })
+        templateUrl: '/app/views/404.html'
+    });
+    
+    $urlRouterProvider.otherwise('error');
 })
 
 .controller('MainCtrl', ['$scope', function($scope){
+    
+}])
+
+.controller('CreatePostCtrl', ['$scope', function($scope){
     
 }]);

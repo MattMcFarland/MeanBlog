@@ -5,18 +5,16 @@
         <title>Blog Application using the MEAN Stack</title>
     </head>
     
-    <body data-ng-app="blogApp">
+    <body>
         <nav>
             <ul>
                 <li><a ui-sref="home">Home</a></li>
                 <li><a ui-sref="blog">Blog</a></li>
-                <li><a ui-sref="home">Create Post</a></li>
+                <li><a ui-sref="create_post">Create Post</a></li>
             </ul>
         </nav>
         
-        <div data-ng-view>
-            
-        </div>
+        <div ng-view></div>
         
         <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
         <script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
